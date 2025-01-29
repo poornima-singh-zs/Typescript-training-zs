@@ -63,7 +63,14 @@ function App() {
                 maxLength={1}
                 disabled={win || life <= 0}
                 style={{
-                  backgroundColor: guess[index] === word[index] ? 'green' : guess[index] ? 'red' : '',
+                  backgroundColor: 
+                    guess[index] === word[index] 
+                      ? 'green' 
+                      : guess[index] && word.includes(guess[index].toLowerCase()) 
+                      ? 'orange'
+                      : guess[index] 
+                      ? 'red' 
+                      : '',
                   color: 'white',
                   textAlign: 'center',
                   height: '50px',
