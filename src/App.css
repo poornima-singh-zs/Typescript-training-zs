@@ -42,10 +42,13 @@
 .read-the-docs {
   color: #888;
 }
+
+
+/* 8888888888 */
 .parent{
   display: grid;
   grid-template-columns: repeat(4,1fr);
-  padding-right: 100px;
+  /* padding-right: 100px; */
   gap: 30px;
   flex-wrap: wrap;
   
@@ -71,7 +74,14 @@
   margin-top: 40px;
  
 }
-@media screen and (max-width: 768px){
+
+.arrow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@media (min-width: 420px ) {
   .parent{
     grid-template-columns: repeat(2,1fr);
   }
@@ -79,5 +89,27 @@
     gap: 0.1rem;
     margin-right: 100px;
   }
+}
+@media (min-width: 768px){
+  .parent{
+    grid-template-columns: repeat(3,1fr);
+  }
+  .pagination{
+    gap: 0.1rem;
+    margin-right: 100px;
+  }
   
 }
+
+
+
+@media (min-width: 1024px ) {
+  .parent{
+    grid-template-columns: repeat(4,1fr);
+  }
+  .pagination{
+    gap: 0.1rem;
+    margin-right: 100px;
+  }
+}
+

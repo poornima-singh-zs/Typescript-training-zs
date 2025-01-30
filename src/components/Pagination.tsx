@@ -45,7 +45,7 @@ const Pagination: React.FC = () => {
 
   return (
     <div>
-      <h1>Products</h1>
+      <h1 className="heading">Products</h1>
       <div className="parent">
         {currentItems.map((product) => (
           <div className="child" key={product.id}>
@@ -70,7 +70,10 @@ const Pagination: React.FC = () => {
           disabled={currentPage === 1}
           
         >
-        <FaAngleLeft /><FaAngleLeft />
+       <div className="arrow">
+       <FaAngleLeft />
+       <FaAngleLeft />
+       </div>
         
         </button>
         <button
@@ -103,8 +106,10 @@ const Pagination: React.FC = () => {
             setVisiblePage([totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages]);
           }}
           disabled={currentPage === totalPages}
-        >
+        ><div className="arrow">
+
           <FaAngleRight /><FaAngleRight />
+        </div>
         </button>
       </div>
     </div>
