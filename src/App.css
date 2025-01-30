@@ -3,6 +3,8 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+ 
+  
 }
 
 .logo {
@@ -39,4 +41,43 @@
 
 .read-the-docs {
   color: #888;
+}
+.parent{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  padding-right: 100px;
+  gap: 30px;
+  flex-wrap: wrap;
+  
+}
+.child{
+  
+  border-radius: 5px;
+  height: 250px;
+  width: 300px;
+  background-color: rgb(249, 252, 252);
+  box-shadow: 0 0  4px  #a7a3a3;
+  transition: transform 0.4s;
+  
+}
+.child:hover{
+  transform: translateY(-5px);
+}
+.pagination{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 40px;
+ 
+}
+@media screen and (max-width: 768px){
+  .parent{
+    grid-template-columns: repeat(2,1fr);
+  }
+  .pagination{
+    gap: 0.1rem;
+    margin-right: 100px;
+  }
+  
 }
