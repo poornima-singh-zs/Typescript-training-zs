@@ -137,7 +137,7 @@ const Pagination: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://dummyjson.com/products?limit=30");
+        const response = await fetch("https://dummyjson.com/products?limit=100");
         const result = await response.json();
         setData(result.products);
       } catch (error) {
@@ -153,25 +153,10 @@ const Pagination: React.FC = () => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
 
-  const getVisiblePages = (current: number, total: number): number[] => {
-    if (total <= 0) return [];
-    let start = Math.max(1, current - 2);
-    let end = Math.min(total, current + 2);
+  const startRange=Math.max(1,currentPage-5+1);
 
-    if (end - start + 1 < 5) {
-      if (current < total / 2) {
-        end = Math.min(total, start + 4);
-      } else {
-        start = Math.max(1, end - 4);
-      }
-    }
+  const visiblePages=[...Array(5)];
 
-    return Array.from({ length: end - start + 1 }, (_, i) => start + i);
-  };
-
-  const visiblePages = getVisiblePages(currentPage, totalPages);
-  const showLeftEllipsis = visiblePages[0] > 1;
-  const showRightEllipsis = visiblePages[visiblePages.length - 1] < totalPages;
 
   const handlePageChange = (page: number) => {
     if (totalPages === 0) return;
@@ -221,31 +206,22 @@ const Pagination: React.FC = () => {
             <FaAngleLeft />
           </button>
 
-          {showLeftEllipsis && (
-            <>
-              <button onClick={() => handlePageChange(1)}>1</button>
-              <button disabled>...</button>
-            </>
-          )}
+      
 
-          {visiblePages.map((page) => (
+          {visiblePages.map((_,indx:number) => {
+            const pageNumber=startRange+indx;
+            return (
+              pageNumber<=totalPages && 
             <button
-              key={page}
-              onClick={() => handlePageChange(page)}
-              disabled={currentPage === page}
-            >
-              {page}
-            </button>
-          ))}
-
-          {showRightEllipsis && (
-            <>
-              <button disabled>...</button>
-              <button onClick={() => handlePageChange(totalPages)}>
-                {totalPages}
-              </button>
-            </>
-          )}
+            key={indx}
+            onClick={() => handlePageChange(pageNumber)}
+            disabled={currentPage === pageNumber}
+          >
+            {pageNumber}
+          </button>
+            )
+          })}
+        
 
           <button onClick={() => handlePageChange(-4)}>
             <FaAngleRight />
