@@ -87,7 +87,7 @@
   }
   .pagination{
     gap: 0.1rem;
-    margin-right: 100px;
+    
   }
 }
 @media (min-width: 768px){
@@ -96,7 +96,7 @@
   }
   .pagination{
     gap: 0.1rem;
-    margin-right: 100px;
+   
   }
   
 }
@@ -109,7 +109,7 @@
   }
   .pagination{
     gap: 0.1rem;
-    margin-right: 100px;
+    
   }
 }
 
