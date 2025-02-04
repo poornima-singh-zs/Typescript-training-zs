@@ -1,0 +1,10 @@
+.parent{
+   display: flex;
+   gap: 100px;
+}
+input{
+    height: 50px;
+    width: 300px;
+    background-color: azure;
+    font-size: 20px;
+}
