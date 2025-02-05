@@ -1,12 +1,15 @@
 
 import './App.css'
-import Debounce from './Debounce'
+import Traffic from './Traffic'
+// import Debounce from './Debounce'
 
 function App() {
 
   return (
     <>
-    <Debounce/>
+    {/* <Debounce/> */}
+   <Traffic />
+
     </>
   
   )
