@@ -1,0 +1,39 @@
+.parent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.upper{
+ 
+   background-color: black;
+   height: 400px;
+   width: 300px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 20px;
+}
+.lower{
+   background-color: black;
+  height: 250px;
+  width: 50px;
+}
+.circle{
+    border-radius: 50%;
+    background-color: white;
+    height: 100px;
+    width: 100px;
+}
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
