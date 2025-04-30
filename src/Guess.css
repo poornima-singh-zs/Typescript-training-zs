@@ -1,0 +1,71 @@
+.game-container {
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    border: 1px solid black;
+    height: 400px;
+    width: 600px;
+  }
+  
+  .lives {
+    padding-left: 350px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .word-boxes {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .letter-box {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+  }
+  
+  .letter-box.correct {
+    background-color: green;
+    color: white;
+  }
+  
+  .input-box {
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    width: 200px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .restart-button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .message-box{
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    width: 300px;
+    font-size: large;
+    color: white;
+    text-align: center;
+    margin-left: 150px;
+  }
+  .message-box.correct{
+    background-color: green;
+  }
+  .message-box.incorrect{
+    background-color: red;
+  }
+  .message-box.present{
+    background-color: orange;
+  }
